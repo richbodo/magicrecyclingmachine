@@ -4,4 +4,25 @@
 
 Recycle your Donors Choose art into new donations!
 
+<h3>Upload your file</h3>
+<p>**Note: there is currently no progress bar. Open the browser console to see if file upload is successful</p>
+<input type="file" class="file fileinput">
+
+<table>
+  <thead>
+    <th>Art Work</th>
+    <th>Name</th>
+    <th>Download</th>
+  </thead>
+  <tbody>
+    {{#each images}}
+    <tr>
+      <td><img class="previewArt" src="{{url}}"></td>
+      <td>{{name}}</td>
+      <td><a href="{{url download=true}}">Download</a> </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
 </template>
