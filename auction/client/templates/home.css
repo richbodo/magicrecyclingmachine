@@ -1,4 +1,26 @@
+.main-gallery {
+  list-style-type: none;
+}
+
+.main-gallery li {
+  display: inline-block;
+  margin: 1em;
+
+}
+
 .previewArt {
   width: 200px;
   height: auto;
+}
+
+.navigation-bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.navigation-bar li {
+  display: inline-block;
+  padding: 1em;
 }
