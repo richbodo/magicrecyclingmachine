@@ -1,9 +1,10 @@
-<<<<<<< HEAD
-=======
 if (Meteor.isClient) {
   Template.home.helpers({
-    images: function() {
+    'images': function() {
       return Images.find();
+    },
+    'artworks': function(){
+	      return ArtworksList.find();
     }
   })
 
@@ -23,14 +24,3 @@ if (Meteor.isClient) {
   });
 }
 
-Artworks = new Mongo.Collection("artworks");
->>>>>>> 6b692d14600f9d3af1f19a08d9793368edfac67f
-
-if (Meteor.isClient) {
-  // This code only runs on the client
-  Template.home.helpers({
-	  'artworks': function(){
-	      return ArtworksList.find();
-	  }
-  });
-}
