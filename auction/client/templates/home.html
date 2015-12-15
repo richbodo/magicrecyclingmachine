@@ -25,4 +25,16 @@ Recycle your Donors Choose art into new donations!
   </tbody>
 </table>
 
+<form>
+    <p>You get to name this artwork!:</p>
+	<input type="text" name="art_name" placeholder="Instead of the image upload, enter a textual name for your artwork image." />
+	<p>Now tell us all about it:</p>
+	<input type="text" name="art_desc" placeholder="Enter a description of the artwork." />
+</form>
+
+<p>Art!</p>
+{{#each artworks}}
+  {{> artwork}}
+{{/each}}
+
 </template>
