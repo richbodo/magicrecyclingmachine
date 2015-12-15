@@ -1,5 +1,12 @@
 <template name="nav">
   <nav class="navigation-bar">
+    {{#if currentUser}}
+       <h1> Welcome Back User! </h1>
+       <br>
+        {{> loginButtons}}
+    {{else}}
+          {{> loginButtons}}
+    {{/if}}
     <ul>
       <li><a href="/">Main</a></li>
       <li><a href="#">About</a></li>

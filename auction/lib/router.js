@@ -14,3 +14,7 @@ Router.route('/item/:_id', {
     return Images.findOne({ _id: Images})
   }
 });
+
+Router.route('/signIn', function(){
+  this.render('signIn');
+});
