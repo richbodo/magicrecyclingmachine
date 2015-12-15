@@ -12,8 +12,11 @@ Recycle your Donors Choose art into new donations!
 </form>
 
 <p>Art!</p>
-{{#each artworks}}
-  {{> artwork}}
-{{/each}}
-
+  <ul>
+  {{#each artworks}}
+      <li>
+	{{name}}: {{description}}
+      </li>
+  {{/each}}
+ </ul>
 </template>

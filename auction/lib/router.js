@@ -1,6 +1,6 @@
 
 Router.configure({
-	layoutTemplate:'layout'
+	layoutTemplate:'home'
 });
 
 Router.route('/', function(){
