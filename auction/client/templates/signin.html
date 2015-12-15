@@ -1,3 +1,11 @@
-<template name="signin">
-{{> loginButtons}}
+<template name="signIn">
+
+    {{#if currentUser}}
+       <h1> Welcome Back User! </h1>
+       <br>
+        {{> loginButtons}}
+    {{else}}
+          {{> loginButtons}}
+    {{/if}}
 </template>
+
