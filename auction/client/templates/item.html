@@ -1,8 +1,18 @@
 <template name="item">
   <div class="container">
     <div class="row">
-      <div class="one column">Image</div>
-      <div class="eleven columns">Details</div>
+      <div class="six columns">
+        <img src="{{url}}" class="previewArt" alt="artwork">
+      </div>
+      <div class="six columns">
+        <ul>
+          <li>Artwork Name: {{metadata.fileName}}</li>
+          <li>Artist: {{metadata.fileArtist}}</li>
+          <li>Description: {{metadata.fileDescription}}</li>
+          <li>Current Bid: TBA</li>
+          <li><a href="#" class="button">Bid</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>

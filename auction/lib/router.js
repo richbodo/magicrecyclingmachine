@@ -10,8 +10,9 @@ Router.route('/', function(){
 Router.route('/item/:_id', {
   template: 'item',
   data: function() {
+    console.log(this.params._id);
     var currentItem = this.params._id;
-    return Images.findOne({ _id: Images})
+    return Images.findOne({ _id: currentItem})
   }
 });
 

@@ -2,9 +2,6 @@
   <div class="container">
     <h1>Magic Recycling Machine</h1>
     <p>Recycle your Donors Choose art into new donations!</p>
-    <h2>Upload your file</h2>
-    <input type="file" class="file fileinput">
-    <p>**Note: there is currently no progress bar. Open the browser console to see if file upload is successful</p>
     <h2>Featured Artwork</h2>
     <ul class="main-gallery">
       {{#each images}}
@@ -14,15 +11,18 @@
       {{/each}}
     </ul>
 
-    <form>
-        <p>You get to name this artwork!:</p>
-      <input type="text" name="art_name" placeholder="Instead of the image upload, enter a textual name for your artwork image." />
-      <p>Now tell us all about it:</p>
-      <input type="text" name="art_desc" placeholder="Enter a description of the artwork." />
+    <form class="file-upload">
+      <label for="file_name">You get to name this artwork</label>
+      <input class="u-full-width file-name" name="file-name" type="text" placeholder="Your artwork name">
+      <label for="file-artist">Who's the artist?</label>
+      <input class="u-full-width file-artist" name="file-artist" type="text" placeholder="Your artist name">
+      <label for="file-description">Now tell us all about it</label>
+      <textarea class="u-full-width file-description" name="file-description" placeholder="Your artwork description"></textarea>
+      <label for="file">Choose your file</label>
+      <input type="file" class="file">
+      <p>**Note: there is currently no progress bar. Open the browser console to see if file upload is successful</p>
+      <!--<input type="submit" class="button-primary file-upload-submit" value="Upload">-->
     </form>
-    <p>Art!</p>
-    {{#each artworks}}
-      {{> artwork}}
-    {{/each}}
+    
   </div>
 </template>

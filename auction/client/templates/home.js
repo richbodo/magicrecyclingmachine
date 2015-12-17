@@ -6,9 +6,13 @@ if (Meteor.isClient) {
   })
 
   Template.home.events({
-    'change .fileinput': function(event, template) {
+      'change .file': function(event, template) {
+      var fileName = $('input[name="file-name"]').val();
+      var fileArtist = $('input[name="file-artist"]').val();
+      var fileDescription = $("textarea").val();
       FS.Utility.eachFile(event, function(file) {
         var fileObj = new FS.File(file);
+        fileObj.metadata = {fileName: fileName, fileDescription: fileDescription, fileArtist: fileArtist};
         Images.insert(fileObj, function (err) {
           console.log(err)
           console.log(fileObj)
