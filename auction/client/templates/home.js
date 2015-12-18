@@ -1,7 +1,10 @@
 if (Meteor.isClient) {
   Template.home.helpers({
-    images: function() {
+    'images': function() {
       return Images.find();
+    },
+    'artworks': function(){
+	      return ArtworksList.find();
     }
   })
 
@@ -25,24 +28,3 @@ if (Meteor.isClient) {
   });
 }
 
-Artworks = new Mongo.Collection("artworks");
-
-if (Meteor.isClient) {
-  // This code only runs on the client
-  Template.body.helpers({
-    artworks: [
-      { name: "Flying Mustache", description: "A 3D mustache on a weaving loom"},
-      { name: "Snowmen With HoolaHoops", description: "A variety of snowmen doing hoola hoops"},
-      { name: "Fish Flowers", description: "Fish swimming among flowers"}
-    ]
-  });
-}
-
-if (Meteor.isClient) {
-  // This code only runs on the client
-  Template.body.helpers({
-    artworks: function () {
-      return Artworks.find({});
-    }
-  });
-}
