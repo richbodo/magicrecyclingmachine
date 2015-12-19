@@ -3,9 +3,8 @@ Bids = new Mongo.Collection("bids");
 if (Meteor.isClient) {
   Template.item.helpers({
     bids: function () {
-      return Bids.find({},{artId:
-        sort: { bid: -1 }
-      });
+      return Bids.find({'artId':this._id},{
+        sort: { text: -1 }});
     }
   });
 }
@@ -15,6 +14,7 @@ Template.item.events({
       event.preventDefault();
       var bid = event.target.bid.value;
       var id = event.target.artId.value;
+      var user =
       console.log(bid)
       console.log(id)
 
