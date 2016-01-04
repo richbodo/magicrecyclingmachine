@@ -10,6 +10,7 @@
           <li>Artist: {{metadata.fileArtist}}</li>
           <li>Description: {{metadata.fileDescription}}</li>
           <li>Current Bid: TBA</li>
+          {{#if currentUser}}
           <li>
               <form class="addBid">
               <span class="currencyinput"> $
@@ -19,6 +20,7 @@
               <input type="submit" value="Bid">
               </form>
          </li>
+         {{/if}}
         </ul>
       <p>
       {{#each bids}}
