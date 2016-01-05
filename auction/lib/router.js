@@ -19,3 +19,7 @@ Router.route('/item/:_id', {
 Router.route('/signIn', function(){
   this.render('signIn');
 });
+
+Router.route('/about', function(){
+  this.render('about');
+});
