@@ -11,6 +11,7 @@
       {{/each}}
     </ul>
 
+    {{#if currentuser}}
     <form class="file-upload">
       <label for="file_name">You get to name this artwork</label>
       <input class="u-full-width file-name" name="file-name" type="text" placeholder="Your artwork name">
@@ -23,6 +24,7 @@
       <p>**Note: there is currently no progress bar. Open the browser console to see if file upload is successful</p>
       <!--<input type="submit" class="button-primary file-upload-submit" value="Upload">-->
     </form>
+    {{/if}}
 
   </div>
 </template>
