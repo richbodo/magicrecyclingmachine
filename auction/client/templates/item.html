@@ -9,7 +9,7 @@
           <li>Artwork Name: {{metadata.fileName}}</li>
           <li>Artist: {{metadata.fileArtist}}</li>
           <li>Description: {{metadata.fileDescription}}</li>
-          <li>Current Bid: {{findTopBid}}</li>
+          <li>Current Bid: $ {{findTopBid}}</li>
           {{#if currentUser}}
           <li>
             <form class="addBid">
@@ -19,6 +19,10 @@
             <input type="hidden" name="artId" value={{_id}} />
             <input type="submit" value="Bid">
             </form>
+         </li>
+         {{else}}
+         <li>
+           If you would like to bid, please log in
          </li>
          {{/if}}
         </ul>

@@ -23,3 +23,7 @@ Router.route('/signIn', function(){
 Router.route('/about', function(){
   this.render('about');
 });
+
+Router.route('/profile', function(){
+  this.render('profile')
+})

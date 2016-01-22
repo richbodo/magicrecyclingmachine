@@ -15,13 +15,37 @@ Template.item.events({
       var bid = event.target.bid.value;
       var id = event.target.artId.value;
       var user = Meteor.userId();
-    Bids.insert({
-        bid: bid,
-        artId: id,
-        user: user,
-        createdAt: new Date() // current time
-      });
+
+      if (Bids.findOne({'artId': this._id}, {sort: {createdAt: -1}}) === undefined) {
+        Bids.insert({
+            bid: bid,
+            artId: id,
+            user: user,
+            createdAt: new Date() // current time
+          })
+      }
+      else if(Bids.findOne({'artId': this._id}, {sort: {createdAt: -1}}).bid > bid) {
+        alert("Enter a higher bid!")
+      }
+      else {
+        Bids.insert({
+            bid: bid,
+            artId: id,
+            user: user,
+            createdAt: new Date() // current time
+          });
+      }
       // Clear form
     event.target.bid.value = "";
     }
 });
+
+if (Meteor.isServer) {
+  Meteor.methods
+   ({
+     getCurrentTime: function (){
+      console.log('on server, getCurrentTime called');
+      return new Date();
+     }
+  });
+ }
