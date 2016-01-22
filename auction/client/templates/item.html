@@ -9,7 +9,7 @@
           <li>Artwork Name: {{metadata.fileName}}</li>
           <li>Artist: {{metadata.fileArtist}}</li>
           <li>Description: {{metadata.fileDescription}}</li>
-          <li>Current Bid: {{bids.bid}}</li>
+          <li>Current Bid: {{findTopBid}}</li>
           {{#if currentUser}}
           <li>
             <form class="addBid">

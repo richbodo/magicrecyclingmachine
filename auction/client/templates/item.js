@@ -2,16 +2,9 @@ Bids = new Mongo.Collection("bids");
 
 if (Meteor.isClient) {
   Template.item.helpers({
-    bids: function () {
-      var topBidArray = Bids.find({'artId': this._id},{});
-      var topBid = 0
-      for (var i = 1 ; i <  topBidArray.length ; i ++) {
-        if ()
-        else if (topBidArray[i].bid > topBidArray[i+1].bid){
-          topBid = topBidArray[i].bid
-        }
-      };
-      return topBid
+    findTopBid: function () {
+      return Bids.findOne({'artId': this._id}, {sort: {createdAt: -1}}).bid;
+      // return Bids.find({},{limit: 1, sort: {bid: -1}}).fetch()[0].bid
     }
   });
 }
@@ -28,7 +21,6 @@ Template.item.events({
         user: user,
         createdAt: new Date() // current time
       });
-    console.log(Bids)
       // Clear form
     event.target.bid.value = "";
     }
