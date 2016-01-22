@@ -9,16 +9,16 @@
           <li>Artwork Name: {{metadata.fileName}}</li>
           <li>Artist: {{metadata.fileArtist}}</li>
           <li>Description: {{metadata.fileDescription}}</li>
-          <li>Current Bid: TBA</li>
+          <li>Current Bid: {{bids.bid}}</li>
           {{#if currentUser}}
           <li>
-              <form class="addBid">
-              <span class="currencyinput"> $
-                <input type="number" step="0.01" min=0 name="bid" placeholder="Bid amount" />
-              </span>
-              <input type="hidden" name="artId" value={{_id}} />
-              <input type="submit" value="Bid">
-              </form>
+            <form class="addBid">
+            <span class="currencyinput"> $
+              <input type="number" step="0.01" min=0 name="bid" placeholder="Bid amount" />
+            </span>
+            <input type="hidden" name="artId" value={{_id}} />
+            <input type="submit" value="Bid">
+            </form>
          </li>
          {{/if}}
         </ul>
@@ -26,8 +26,6 @@
       {{#each bids}}
         <p>$ {{bid}}</p>
         <p>{{createdAt}}</p>
-        <p>{{artId}}</p>
-        <p>{{user}}</p>
       {{/each}}
       </p>
 

@@ -7,6 +7,7 @@ if (Meteor.isClient) {
 	 return ArtworksList.find();
     },
     'admin': function() {
+      // Remember to add userId to environmental variables
       if (Meteor.userId() === "ztmRdESA3HkxarhjR") {
         return true
       }
