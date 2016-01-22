@@ -15,9 +15,16 @@ Template.item.events({
       var bid = event.target.bid.value;
       var id = event.target.artId.value;
       var user = Meteor.userId();
-      var topBid = Bids.findOne({'artId': this._id}, {sort: {createdAt: -1}}).bid
-      console.log(topBid)
-      if (topBid > bid) {
+
+      if (Bids.findOne({'artId': this._id}, {sort: {createdAt: -1}}) === undefined) {
+        Bids.insert({
+            bid: bid,
+            artId: id,
+            user: user,
+            createdAt: new Date() // current time
+          })
+      }
+      else if(Bids.findOne({'artId': this._id}, {sort: {createdAt: -1}}).bid > bid) {
         alert("Enter a higher bid!")
       }
       else {

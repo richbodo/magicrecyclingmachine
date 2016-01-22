@@ -26,4 +26,3 @@ cfs:gridfs
 cfs:filesystem
 
 accounts-google
-simple:reactive-method
