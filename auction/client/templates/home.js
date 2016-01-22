@@ -4,7 +4,15 @@ if (Meteor.isClient) {
       return Images.find();
     },
     'artworks': function(){
-	      return ArtworksList.find();
+	 return ArtworksList.find();
+    },
+    'admin': function() {
+      if (Meteor.userId() === "ztmRdESA3HkxarhjR") {
+        return true
+      }
+      else {
+        return false
+      }
     }
   })
 

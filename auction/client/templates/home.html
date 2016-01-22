@@ -11,19 +11,19 @@
       {{/each}}
     </ul>
 
-    {{#if currentuser}}
-    <form class="file-upload">
-      <label for="file_name">You get to name this artwork</label>
-      <input class="u-full-width file-name" name="file-name" type="text" placeholder="Your artwork name">
-      <label for="file-artist">Who's the artist?</label>
-      <input class="u-full-width file-artist" name="file-artist" type="text" placeholder="Your artist name">
-      <label for="file-description">Now tell us all about it</label>
-      <textarea class="u-full-width file-description" name="file-description" placeholder="Your artwork description"></textarea>
-      <label for="file">Choose your file</label>
-      <input type="file" class="file">
-      <p>**Note: there is currently no progress bar. Open the browser console to see if file upload is successful</p>
-      <!--<input type="submit" class="button-primary file-upload-submit" value="Upload">-->
-    </form>
+    {{#if admin}}
+      <form class="file-upload">
+        <label for="file_name">You get to name this artwork</label>
+        <input class="u-full-width file-name" name="file-name" type="text" placeholder="Your artwork name">
+        <label for="file-artist">Who's the artist?</label>
+        <input class="u-full-width file-artist" name="file-artist" type="text" placeholder="Your artist name">
+        <label for="file-description">Now tell us all about it</label>
+        <textarea class="u-full-width file-description" name="file-description" placeholder="Your artwork description"></textarea>
+        <label for="file">Choose your file</label>
+        <input type="file" class="file">
+        <p>**Note: there is currently no progress bar. Open the browser console to see if file upload is successful</p>
+        <!--<input type="submit" class="button-primary file-upload-submit" value="Upload">-->
+      </form>
     {{/if}}
 
   </div>
